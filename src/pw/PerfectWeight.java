@@ -22,13 +22,27 @@ public class PerfectWeight {
             bmiFactor = 21; // Average BMI for female
         } else {
             System.out.println("Invalid gender entered. Please enter 'M' or 'F'.");
-            scanner.close();
+             scanner.close();
             return;
         }
 
         double idealWeight = bmiFactor * Math.pow((height / 100), 2);
 
         System.out.printf("Your ideal weight is: %.2f kg\n", idealWeight);
+        System.out.print("Enter your actual weight in kg: ");
+        double actualWeight = scanner.nextDouble();
+           
+            if (actualWeight < idealWeight) {
+            System.out.println("You are underweight. Consider consulting a healthcare provider for advice on a healthy weight gain plan.");
+        } else if (actualWeight > idealWeight) {
+            System.out.println("You are overweight. It's important to maintain a balanced diet and increase physical activity. Please consider consulting a healthcare provider.");
+        } else {
+            System.out.println("You are at your ideal weight! Keep maintaining a healthy lifestyle.");
+        }
         scanner.close();
+    
+    
+         
+           
     }
 }
